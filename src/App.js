@@ -20,7 +20,7 @@ function App() {
         <Loading>
           <Switch>
             <Route path="/" exact>
-              <Dashboard />
+              <h1>BOLOLLO</h1>
             </Route>
             <PrivateAdmin
               path="/master"
