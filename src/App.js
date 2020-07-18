@@ -19,7 +19,9 @@ function App() {
       <Router>
         <Loading>
           <Switch>
-            <Route path="/" exact component={Dashboard}></Route>
+            <Route path="/" exact>
+              <Dashboard />
+            </Route>
             <PrivateAdmin
               path="/master"
               component={AddFilem}
