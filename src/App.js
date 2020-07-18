@@ -19,9 +19,11 @@ function App() {
       <Router>
         <Loading>
           <Switch>
-            <Route path="/" exact>
-              <h1>BOLOLLO</h1>
-            </Route>
+            <Route
+              path="/"
+              exact
+              render={(props) => <Dashboard {...props} />}
+            />
             <PrivateAdmin
               path="/master"
               component={AddFilem}
@@ -50,12 +52,12 @@ function App() {
               path="/detail/:id"
               render={(props) => <Detail {...props} />}
             />
-            <Route path="/tv" exact>
-              <Tv />
-            </Route>
-            <Route path="/movies" exact>
-              <Movies />
-            </Route>
+            <Route path="/tv" exact render={(props) => <Tv {...props} />} />
+            <Route
+              path="/movies"
+              exact
+              render={(props) => <Movies {...props} />}
+            />
             {/* <Route path="/vidio/:id" render={(props) => (<DetailAdmin {...props}/>)}/> */}
             <Route path="*">
               <NoMatch />
