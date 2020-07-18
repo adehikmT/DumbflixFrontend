@@ -35,7 +35,7 @@ class Dashboard extends Component {
       <>
         <Header />
         <Jumbotron />
-        {loading || lfm ? (
+        {/* {loading || lfm ? (
           <h1 className="loading">Loading.....</h1>
         ) : error ? (
           <h1 className="loading">{error}</h1>
@@ -62,7 +62,7 @@ class Dashboard extends Component {
           </>
         ) : (
           <h1 className="loading"> Film Blank </h1>
-        )}
+        )} */}
         <Footer created="Ade Hikmat Pauji Ridwan" />
       </>
     );
