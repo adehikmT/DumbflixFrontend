@@ -99,6 +99,8 @@ class Dashboard extends Component {
     console.log(films);
     return (
       <>
+        <Header />
+        <Jumbotron />
         <h1>ANNJING</h1>
       </>
     );
