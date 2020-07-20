@@ -65,22 +65,26 @@ import { getAllfilmCreator } from "../redux/actions/actionFilm";
 //   }
 // }
 
-// const mapStateToProps = (state) => {
-//   const { data, loading, error } = state.getAllfilm;
-//   const { data: dfm, loading: lfm, error: efm } = state.deleteFilm;
-//   const { data: Auth } = state.authReducer;
-//   return {
-//     data,
-//     loading,
-//     error,
-//     dfm,
-//     lfm,
-//     efm,
-//     Auth,
-//   };
-// };
+const mapStateToProps = (state) => {
+  const { data, loading, error } = state.getAllfilm;
+  const { data: dfm, loading: lfm, error: efm } = state.deleteFilm;
+  const { data: Auth } = state.authReducer;
+  return {
+    data,
+    loading,
+    error,
+    dfm,
+    lfm,
+    efm,
+    Auth,
+  };
+};
 
 class Dashboard extends Component {
+  componentDidMount() {
+    this.props.getAllfilmCreator();
+    console.log(this.props);
+  }
   render() {
     return (
       <>
@@ -90,4 +94,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default connect(mapStateToProps, { getAllfilmCreator })(Dashboard);
