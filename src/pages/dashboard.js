@@ -102,6 +102,35 @@ class Dashboard extends Component {
         <Header />
         <Jumbotron />
         <h1>ANNJING</h1>
+        {loading || lfm ? (
+          <h1 className="loading">Loading.....</h1>
+        ) : error ? (
+          <h1 className="loading">{error}</h1>
+        ) : (
+          ""
+        )}
+        {dfm.id ? <h1 className="loading">Loading.....</h1> : ""}
+        {data.length > 0 ? (
+          <>
+            {admin ? (
+              <Admin tv={tvshows} film={films} />
+            ) : (
+              <>
+                <ListFilm
+                  kategori="TV Shows"
+                  data={data.length > 0 && !loading ? tvshows : []}
+                />
+                <ListFilm
+                  kategori="Movies"
+                  data={data.length > 0 && !loading ? films : []}
+                />
+              </>
+            )}
+          </>
+        ) : (
+          <h1 className="loading"> Film Blank </h1>
+        )}
+        <Footer created="Ade Hikmat Pauji Ridwan" />
       </>
     );
   }
