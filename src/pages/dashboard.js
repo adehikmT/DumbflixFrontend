@@ -9,10 +9,10 @@ import { connect } from "react-redux";
 import { getAllfilmCreator } from "../redux/actions/actionFilm";
 
 class Dashboard extends Component {
-  async componentDidMount() {
-    await this.props.getAllfilmCreator();
-    console.log("didmont");
-  }
+  // async componentDidMount() {
+  //   await this.props.getAllfilmCreator();
+  //   console.log("didmont");
+  // }
 
   render() {
     // const { loading, lfm, dfm, data, error, Auth } = this.props;
