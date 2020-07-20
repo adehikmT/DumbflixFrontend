@@ -86,6 +86,17 @@ class Dashboard extends Component {
     console.log(this.props);
   }
   render() {
+    const { loading, lfm, dfm, data, error, Auth } = this.props;
+    const films =
+      data.length > 0 ? data.filter((movies) => movies.category.id === 2) : [];
+    const tvshows =
+      data.length > 0 ? data.filter((movies) => movies.category.id === 1) : [];
+    // admin or not
+    let admin = false;
+    if (Auth.length > 0 && Auth[0].role > 0) {
+      admin = true;
+    }
+    console.log(films);
     return (
       <>
         <h1>ANNJING</h1>
