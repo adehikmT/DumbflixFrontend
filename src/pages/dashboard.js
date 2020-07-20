@@ -11,12 +11,7 @@ import { getAllfilmCreator } from "../redux/actions/actionFilm";
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getAllfilmCreator();
-  }
-
-  componentWillUpdate() {}
-
-  componentDidUpdate() {
-    // this.props.getAllfilmCreator();
+    console.log("didmont");
   }
 
   render() {
@@ -30,6 +25,7 @@ class Dashboard extends Component {
     if (Auth.length > 0 && Auth[0].role > 0) {
       admin = true;
     }
+    console.log("render");
     return (
       // fragmen
       <>
