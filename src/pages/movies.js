@@ -23,20 +23,7 @@ class Movies extends Component {
       <>
         <Header />
         <Jumbotron />
-        {loading ? (
-          <h1 className="loading">Loading.....</h1>
-        ) : error ? (
-          <h1 className="loading">{error}</h1>
-        ) : data.length > 0 ? (
-          <>
-            <ListFilm
-              kategori="Movies"
-              data={data.length > 0 && !loading ? film : []}
-            />
-          </>
-        ) : (
-          <h1 className="loading"> Film Blank </h1>
-        )}
+
         <Footer created="Ade Hikmat Pauji Ridwan" />
       </>
     );
