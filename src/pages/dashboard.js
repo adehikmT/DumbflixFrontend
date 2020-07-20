@@ -9,22 +9,22 @@ import { connect } from "react-redux";
 import { getAllfilmCreator } from "../redux/actions/actionFilm";
 
 class Dashboard extends Component {
-  componentDidMount() {
-    this.props.getAllfilmCreator();
+  async componentDidMount() {
+    await this.props.getAllfilmCreator();
     console.log("didmont");
   }
 
   render() {
-    const { loading, lfm, dfm, data, error, Auth } = this.props;
-    const films =
-      data.length > 0 ? data.filter((movies) => movies.category.id === 2) : [];
-    const tvshows =
-      data.length > 0 ? data.filter((movies) => movies.category.id === 1) : [];
-    // admin or not
-    let admin = false;
-    if (Auth.length > 0 && Auth[0].role > 0) {
-      admin = true;
-    }
+    // const { loading, lfm, dfm, data, error, Auth } = this.props;
+    // const films =
+    //   data.length > 0 ? data.filter((movies) => movies.category.id === 2) : [];
+    // const tvshows =
+    //   data.length > 0 ? data.filter((movies) => movies.category.id === 1) : [];
+    // // admin or not
+    // let admin = false;
+    // if (Auth.length > 0 && Auth[0].role > 0) {
+    //   admin = true;
+    // }
     console.log("render");
     return (
       // fragmen
