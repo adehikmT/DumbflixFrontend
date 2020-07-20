@@ -13,13 +13,11 @@ class Tvs extends Component {
   componentDidMount() {
     this.props.getAllfilmCreator();
   }
-
   render() {
     const { loading, data, error } = this.props;
-    const tvshows =
+    const film =
       data.length > 0 ? data.filter((movies) => movies.category.id === 1) : [];
     return (
-      // fragmen
       <>
         <Header />
         <Jumbotron />
@@ -30,8 +28,8 @@ class Tvs extends Component {
         ) : data.length > 0 ? (
           <>
             <ListFilm
-              kategori="TV Shows"
-              data={data.length > 0 && !loading ? tvshows : []}
+              kategori="Tv Series"
+              data={data.length > 0 && !loading ? film : []}
             />
           </>
         ) : (
