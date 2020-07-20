@@ -80,4 +80,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getAllfilmCreator })(Dashboard);
+export default (Dashboard);
