@@ -43,14 +43,7 @@ import { getAllfilmCreator } from "../redux/actions/actionFilm";
 //   }
 // }
 
-const mapStateToProps = (state) => {
-  const { data, loading, error } = state.getAllfilm;
-  return {
-    data,
-    loading,
-    error,
-  };
-};
+
 
 class Movies extends Component {
   componentDidMount() {
@@ -65,5 +58,14 @@ class Movies extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  const { data, loading, error } = state.getAllfilm;
+  return {
+    data,
+    loading,
+    error,
+  };
+};
 
 export default connect(mapStateToProps, { getAllfilmCreator })(Movies);
